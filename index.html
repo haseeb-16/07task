@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Registration portal demonstrating CSS box model and traditional layout.">
+    <title>Day 07 - Registration Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sticky navigation -->
+    <nav class="top-nav" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#registration">Registration</a>
+        <a href="#records">Records</a>
+        <a href="#layout-demo">Layout Demo</a>
+    </nav>
+
+    <header id="home" class="page-header">
+        <span class="header-badge">DAY 07</span>
+        <h1>Intern Registration Portal</h1>
+        <p>Box Model, Positioning and Traditional CSS Layout</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Traditional two-column layout using floats -->
+        <section class="two-column" id="layout-demo">
+
+            <article class="column left-column">
+                <span class="status-badge">Open</span>
+                <h2>About Registration</h2>
+                <p>
+                    Complete the form to register your details.
+                    This page demonstrates the CSS box model,
+                    positioning, floats, overflow and pseudo-elements.
+                </p>
+                <p>
+                    The status badge is positioned absolutely
+                    inside this relatively positioned card.
+                </p>
+            </article>
+
+            <article class="column right-column">
+                <h2>Registration Guidelines</h2>
+                <ul>
+                    <li>Enter your correct name.</li>
+                    <li>Use a valid email address.</li>
+                    <li>Choose your preferred course.</li>
+                    <li>Accept the terms before submitting.</li>
+                </ul>
+            </article>
+
+            <!-- clear fixes the floated columns below -->
+            <div class="clearfix"></div>
+        </section>
+
+        <!-- Registration form -->
+        <section class="panel" id="registration">
+            <h2>Registration Form</h2>
+            <p class="section-intro">
+                Fields marked with an asterisk are required.
+            </p>
+
+            <form action="#" method="get">
+
+                <div class="form-group">
+                    <label for="full-name">Full Name *</label>
+                    <input
+                        type="text"
+                        id="full-name"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        minlength="3"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="example@email.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="course">Select Course *</label>
+                    <select id="course" name="course" required>
+                        <option value="">Choose a course</option>
+                        <option value="html">HTML and CSS</option>
+                        <option value="python">Python</option>
+                        <option value="ai">Artificial Intelligence</option>
+                    </select>
+                </div>
+
+                <fieldset class="form-group">
+                    <legend>Preferred Schedule</legend>
+
+                    <label class="choice">
+                        <input
+                            type="radio"
+                            name="schedule"
+                            value="morning"
+                            required
+                        >
+                        Morning
+                    </label>
+
+                    <label class="choice">
+                        <input
+                            type="radio"
+                            name="schedule"
+                            value="evening"
+                        >
+                        Evening
+                    </label>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="notes">Additional Notes</label>
+                    <textarea
+                        id="notes"
+                        name="notes"
+                        rows="4"
+                        placeholder="Enter any additional information..."
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="choice">
+                        <input
+                            type="checkbox"
+                            name="terms"
+                            required
+                        >
+                        I agree to the registration terms.
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="reference">Reference Code (Disabled)</label>
+                    <input
+                        type="text"
+                        id="reference"
+                        value="Assigned by administration"
+                        disabled
+                    >
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit">Register Now</button>
+                    <button type="reset" class="reset-button">
+                        Reset Form
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Table -->
+        <section class="panel" id="records">
+            <h2>Registration Records</h2>
+            <p class="section-intro">
+                The wrapper handles horizontal overflow on small screens.
+            </p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Course</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>Ali Ahmed</td>
+                            <td>ali@example.com</td>
+                            <td>HTML and CSS</td>
+                            <td>Approved</td>
+                        </tr>
+                        <tr>
+                            <td>102</td>
+                            <td>Sara Khan</td>
+                            <td>sara@example.com</td>
+                            <td>Python</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr>
+                            <td>103</td>
+                            <td>Usman Raza</td>
+                            <td>usman@example.com</td>
+                            <td>Artificial Intelligence</td>
+                            <td>Approved</td>
+                        </tr>
+                        <tr>
+                            <td>104</td>
+                            <td>Ayesha Noor</td>
+                            <td>ayesha@example.com</td>
+                            <td>HTML and CSS</td>
+                            <td>Pending</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Visibility and display demonstration -->
+        <section class="panel">
+            <h2>Display and Visibility Demo</h2>
+
+            <p class="display-demo">
+                This text is displayed normally.
+            </p>
+
+            <p class="hidden-display">
+                You cannot see this text because display is none.
+            </p>
+
+            <p class="hidden-visibility">
+                This text is invisible, but its space is reserved.
+            </p>
+
+            <p class="display-demo">
+                This text follows the hidden examples.
+            </p>
+
+            <p class="demo-note">
+                Inspect this section in DevTools to compare the layout.
+            </p>
+        </section>
+
+        <!-- Overflow and word wrapping -->
+        <section class="panel">
+            <h2>Overflow Demonstration</h2>
+
+            <div class="overflow-box">
+                This is a long notes area. Add more text here to see
+                how content behaves when it exceeds the dimensions
+                of its container. The box uses overflow-y: auto,
+                so a vertical scrollbar appears when necessary.
+                LongUnbrokenTextExampleForTestingOverflowWrapping123456789
+            </div>
+        </section>
+
+        <!-- Table display values -->
+        <section class="panel">
+            <h2>Table Display Values</h2>
+
+            <div class="display-table">
+                <div class="display-table-row">
+                    <div class="display-table-cell">Name</div>
+                    <div class="display-table-cell">Course</div>
+                </div>
+                <div class="display-table-row">
+                    <div class="display-table-cell">Ali</div>
+                    <div class="display-table-cell">HTML</div>
+                </div>
+                <div class="display-table-row">
+                    <div class="display-table-cell">Sara</div>
+                    <div class="display-table-cell">Python</div>
+                </div>
+            </div>
+
+            <p>
+                These div elements imitate table layout using
+                display: table, table-row and table-cell.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Intern Registration Portal</p>
+        <a href="#home">Back to Top</a>
+    </footer>
+
+</body>
+</html>
